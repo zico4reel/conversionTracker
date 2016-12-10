@@ -1,0 +1,51 @@
+﻿
+
+<!-- 
+Copyright and written by Ezekiel Okoduwa Inc. All Rights Reserved.
+ -->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<title>Hands ofGod</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<script src="conversion-tracker.js"></script>
+		<script>
+
+		
+		var ct = conversionTracker;
+
+					
+		var cookieitem = ct.getCookies();
+
+		if(ct.isNotEmpty(cookieitem.utm_source)){
+			console.log(cookieitem);
+			console.log("Cookie Not Empty")
+			console.log(cookieitem);
+		}else{
+
+			var niceUrl = ct.getUrl();
+
+			if(ct.isNotEmpty(niceUrl.utm_source)){
+				ct.setCookie("utm_source",niceUrl.utm_source,2);
+				console.log(ct.getCookies().utm_source);
+			}else{
+
+				console.log("Couldn't Set Cookies")
+
+			}
+
+		}
+		ct.showAsSid(cookieitem.utm_source);
+		console.log(history.state);
+
+
+		</script>
+  </head>
+  <body">
+
+  </body>
+</html>
